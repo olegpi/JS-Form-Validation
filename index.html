@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="Laboratory: Oleg Pislari" />
+	<meta name="author" content="Oleg Pislari" />
+	
+	<title>Laboratory: Oleg Pislari</title>
+	
+	<!-- Style -->
+	<style>
+	body {
+	  margin: 0;
+	  font-family: "Lato", sans-serif;
+	  background-color: #ffffff;
+	  color: #212121;
+	}
+
+	p{
+		margin: 0 auto;
+		padding: 0;
+	}
+	.content{
+		width: 100%;
+	}
+	
+	.block{
+		margin: 20px;
+		padding: 20px;
+		border: solid 1px hsl(0deg 0% 80%);
+	}
+	h2{
+	    margin: 10px 0;
+	}
+	.field{
+		padding: 10px 0;
+	}
+	p.error{
+		color: red;
+		font-size: 12px;
+	}
+	</style>
+	
+	<!-- JS Script -->
+	<script src="formValidation.js" type="text/javascript"></script>
+    <script>
+	document.addEventListener("DOMContentLoaded", function(){
+		try {	
+			FormValidationComponent = new formValidationComponent();
+			FormValidationComponent.init();
+		} catch(e) {
+			console.log(e);
+		}
+	});
+	</script>
+  </head>
+<body>
+	<div class="content">
+		<div class="block">
+			<h2>Form Validation </h2>
+			<form novalidate name="labForm" id="labForm" action="/test" method="post">
+				<div class="field">
+					<label for="labname">Name</label>
+					<input type="text" name="labname" required />
+					<p class="labnameError error"></p>
+				</div>
+				<div class="field">
+					<label for="labemail">Email</label>
+					<input type="text" name="labemail" />
+					<p class="labemailError error"></p>
+				</div>
+				<div class="field">
+					<label for="labphone">Phone Ex: (123) 456-7890</label>
+					<input type="text" name="labphone" />
+					<p class="labphoneError error"></p>		
+				</div>
+				<div class="field">
+					<input type="submit" value="Submit"/>
+				</div>					
+			</form>
+		</div> 
+	</div> 
+</body>
+</html>
